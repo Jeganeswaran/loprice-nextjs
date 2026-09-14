@@ -37,7 +37,7 @@ export default function SeatSelection({
                 </div>
 
                 <BookingSummary
-                    seat={selectedSeat}
+                    seatLabel={selectedSeat !== null ? String(selectedSeat) : null}
                     fare={bus.price}
                 />
 
