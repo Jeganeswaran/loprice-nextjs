@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+:root {
+  --brand: #bf2629;
+  --brand-dark: #9f1f22;
+  --brand-soft: #fff2f2;
+  --ink: #17181c;
+  --muted: #6b7280;
+  --surface: #ffffff;
+  --canvas: #f7f8fa;
+  --success: #159447;
+}
+
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: "Inclusive Sans", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+::selection {
+  background: #f8b4b4;
+  color: #6f1316;
+}
+
+.container-shell {
+  @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8;
+}
+.card {
+  @apply rounded-2xl border border-black/5 bg-white shadow-sm;
+}
+.section-title {
+  @apply font-medium tracking-tight text-neutral-900 text-xl capitalize;
+}
+.section-copy {
+  @apply max-w-3xl text-sm leading-6 text-neutral-500 sm:text-sm;
+}
+.btn-primary {
+  @apply inline-flex items-center justify-center rounded-xl bg-[#bf2629] px-5 py-2 font-semibold text-white transition hover:bg-[#9f1f22];
+}
+.btn-secondary {
+  @apply inline-flex items-center justify-center rounded-xl border border-neutral-300 bg-white px-5 py-2 font-semibold text-neutral-800 transition hover:bg-neutral-50;
+}
+
+@keyframes sheet-in {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* globals.css */
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* globals.css */
+@keyframes float {
+  0%, 100% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-20px) translateX(10px); }
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.4; }
+  50% { opacity: 0.7; }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes reading-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+.animate-float { animation: float 8s ease-in-out infinite; }
+.animate-pulse-slow { animation: pulse-slow 6s ease-in-out infinite; }
