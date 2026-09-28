@@ -8,6 +8,7 @@ import {
   Gift,
   UserRound,
   BusFront,
+  CircleUserRound,
   X,
 } from "lucide-react";
 import { useState } from "react";
@@ -20,6 +21,7 @@ export default function Header() {
     { href: "/offers", label: "Offers", icon: Gift },
     { href: "/bookings", label: "Track Ticket", icon: TicketCheck },
     { href: "/help", label: "Help", icon: CircleHelp },
+    { href: "/profile", label: "My Profile", icon: CircleUserRound },
   ];
 
   return (

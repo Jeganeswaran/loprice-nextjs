@@ -152,10 +152,19 @@ export default function Footer() {
   ]
 
   const importantLinks = [
-    'Home', 'Offer', 'About', 'Contact', "FAQ's", 'Terms', 'Privacy',
-    'Responsible Disclosure', 'Operators', 'Routes', 'Careers',
-    'Our Management', 'Investors Relations', 'Cancellation Policy',
-    'Agent Registration',
+    { label: 'Home', href: '/' },
+    { label: 'Offers', href: '/offers' },
+    { label: 'Blog', href: '/blog' },
+    { label: 'Help Center', href: '/help' },
+    { label: 'FAQ', href: '/help' },
+    { label: 'Terms', href: '/terms-of-service' },
+    { label: 'Privacy', href: '/privacy-policy' },
+    { label: 'Cancellation Policy', href: '/cancellation-policy' },
+    { label: 'Refund Policy', href: '/refund-policy' },
+    { label: 'Search Buses', href: '/search' },
+    { label: 'My Bookings', href: '/bookings' },
+    { label: 'Profile', href: '/profile' },
+    { label: 'Login', href: '/login' },
   ]
 
   const socialLinks = [
@@ -306,21 +315,21 @@ export default function Footer() {
         <div className="border-b border-neutral-200 pb-6">
           <h4 className="mb-3 text-sm font-semibold">Important Links</h4>
           <div className="flex flex-wrap gap-3 text-xs text-neutral-600">
-            {importantLinks.map((link) => (
+            {importantLinks.map(({ label, href }) => (
               <Link
-                key={link}
-                href="/"
+                key={label}
+                href={href}
                 prefetch={false}
                 className="mr-4 hover:text-neutral-800"
               >
-                {link}
+                {label}
               </Link>
             ))}
           </div>
         </div>
 
         <div className="mt-6 flex flex-col gap-4 text-xs text-neutral-600 md:flex-row md:items-center md:justify-between">
-          <div>© 2026 LoPrice.com. Demo UI project.</div>
+          <div>© 2026 LoPrice.com. Low Prices Ticket booking System.</div>
           <div className="flex items-center gap-3">
             {socialLinks.map(({ href, label, Icon }) => (
               <a
